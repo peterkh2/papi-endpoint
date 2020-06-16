@@ -11,10 +11,7 @@ app.get('/api-endpoint', function(request, response) {
     var nameString = request.query.name;
     var historyString = request.query.history;
     
-      var jsonContent = { 
-            title: nameString,
-            imageUrl: "https://image.flaticon.com/icons/png/512/61/61456.png",
-            contact: [
+      var jsonContent = [
                         {
                             "id": 1,
                             "productImage": "https://www.hkcsl.com/u/cms/pccw/img/handset/20111_2.jpg",
@@ -39,9 +36,7 @@ app.get('/api-endpoint', function(request, response) {
                             "purchasePrice": "3899",
                             "purchaseMethod": "Website"
                         }        
-                ],
-            show: true 
-        };
+                ];
 
     response.send(JSON.parse(JSON.stringify(jsonContent)));
     
