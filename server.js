@@ -14,7 +14,32 @@ app.get('/api-endpoint', function(request, response) {
       var jsonContent = { 
             title: nameString,
             imageUrl: "https://image.flaticon.com/icons/png/512/61/61456.png",
-            contact: [ {id: 12345, name: "King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"},{id: 12346, name: "King King Lai"}],
+            contact: [
+                        {
+                            "id": 1,
+                            "productImage": "https://www.hkcsl.com/u/cms/pccw/img/handset/20111_2.jpg",
+                            "productLink": "https://www.hkcsl.com/handset/tc/pro_details.jsp?id=421070",
+                            "status": "Success",
+                            "statusStyle": "slds-text-color_success",
+                            "productName": "Black Shark 2 Pro (12GB+256GB)",
+                            "purchaseDate": "05-May-2019",
+                            "paymentMethod": "Cash",
+                            "purchasePrice": "4898",
+                            "purchaseMethod": "Walk-in"
+                        },
+                        {
+                            "id": 2,
+                            "productImage": "https://www.hkcsl.com/u/cms/pccw/img/handset/38221_2.jpg",
+                            "productLink": "https://www.hkcsl.com/handset/tc/pro_details.jsp?id=421070",
+                            "status": "Cancel",
+                            "statusStyle": "slds-text-color_destructive",
+                            "productName": "iPhone SE (128GB)",
+                            "purchaseDate": "05-Jun-2020",
+                            "paymentMethod": "Credit card",
+                            "purchasePrice": "3899",
+                            "purchaseMethod": "Website"
+                        }        
+                ],
             show: true 
         };
 
