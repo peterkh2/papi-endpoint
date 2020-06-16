@@ -22,6 +22,46 @@ app.get('/api-endpoint', function(request, response) {
     
 });
 
+//Purchase History
+app.get('/api/purchaseHistory', function (request, response) {
+  var id = request.query.id;
+
+  fs.readFile('./data/purchaseHistory.json', 'utf8', (err, data) => {
+    if (err) { throw err; }
+
+    var result;
+    var rawData = JSON.parse(data);
+
+    if (id) {
+      result = rawData.filter(x => x.id === parseInt(id));
+    } else {
+      result = rawData;
+    }
+
+    response.send(JSON.parse(JSON.stringify(result)));
+  })
+});
+
+//Promotion Recommendation
+app.get('/api/promotionRecommendation', function (request, response) {
+  var id = request.query.id;
+
+  fs.readFile('./data/promotionRecommendation.json', 'utf8', (err, data) => {
+    if (err) { throw err; }
+
+    var result;
+    var rawData = JSON.parse(data);
+
+    if (id) {
+      result = rawData.filter(x => x.id === parseInt(id));
+    } else {
+      result = rawData;
+    }
+
+    response.send(JSON.parse(JSON.stringify(result)));
+  })
+});
+
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
