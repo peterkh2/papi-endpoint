@@ -24,7 +24,8 @@ app.get('/api-endpoint', function(request, response) {
                             "paymentMethod": "Cash",
                             "purchasePrice": "4898",
                             "purchaseMethod": "Walk-in"
-                        },
+                        }
+//       ,
 //                         {
 //                             "id": 2,
 //                             "productImage": "https://www.hkcsl.com/u/cms/pccw/img/handset/38221_2.jpg",
