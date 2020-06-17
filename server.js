@@ -11,7 +11,8 @@ app.get('/api-endpoint', function(request, response) {
     var nameString = request.query.name;
     var historyString = request.query.history;
     
-      var jsonContent = [
+      var jsonContent = 
+//           [
                         {
                             "id": 1,
                             "productImage": "https://www.hkcsl.com/u/cms/pccw/img/handset/20111_2.jpg",
@@ -24,19 +25,20 @@ app.get('/api-endpoint', function(request, response) {
                             "purchasePrice": "4898",
                             "purchaseMethod": "Walk-in"
                         },
-                        {
-                            "id": 2,
-                            "productImage": "https://www.hkcsl.com/u/cms/pccw/img/handset/38221_2.jpg",
-                            "productLink": "https://www.hkcsl.com/handset/tc/pro_details.jsp?id=421070",
-                            "status": "Cancel",
-                            "statusStyle": "slds-text-color_destructive",
-                            "productName": "iPhone SE (128GB)",
-                            "purchaseDate": "05-Jun-2020",
-                            "paymentMethod": "Credit card",
-                            "purchasePrice": "3899",
-                            "purchaseMethod": "Website"
-                        }        
-                ];
+//                         {
+//                             "id": 2,
+//                             "productImage": "https://www.hkcsl.com/u/cms/pccw/img/handset/38221_2.jpg",
+//                             "productLink": "https://www.hkcsl.com/handset/tc/pro_details.jsp?id=421070",
+//                             "status": "Cancel",
+//                             "statusStyle": "slds-text-color_destructive",
+//                             "productName": "iPhone SE (128GB)",
+//                             "purchaseDate": "05-Jun-2020",
+//                             "paymentMethod": "Credit card",
+//                             "purchasePrice": "3899",
+//                             "purchaseMethod": "Website"
+//                         }        
+//                 ]
+      ;
 
     response.send(JSON.parse(JSON.stringify(jsonContent)));
     
