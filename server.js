@@ -22,7 +22,7 @@ app.get('/api-endpoint', function(request, response) {
                             "status": "Completed",
                             "statusStyle": "slds-text-color_success",
                             "productName": "Black Shark 2 Pro (12GB+256GB)",
-                            "purchaseDate": "2019-05-05",
+                            "purchaseDate": "05-May-2019",
                             "paymentMethod": "Cash",
                             "purchasePrice": "4898",
                             "purchaseMethod": "Walk-in"
@@ -35,7 +35,7 @@ app.get('/api-endpoint', function(request, response) {
                             "status": "In progress",
                             "statusStyle": "slds-text-color_destructive",
                             "productName": "iPhone SE (128GB)",
-                            "purchaseDate": "2019-06-05",
+                            "purchaseDate": "05-June-2019",
                             "paymentMethod": "Credit card",
                             "purchasePrice": "3899",
                             "purchaseMethod": "Website"
