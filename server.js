@@ -22,7 +22,7 @@ app.get('/api-endpoint', function(request, response) {
                             "status": "Completed",
                             "statusStyle": "slds-text-color_success",
                             "productName": "Black Shark 2 Pro (12GB+256GB)",
-                            "purchaseDate": "2019-06-05",
+                            "purchaseDate": "2020-05-05",
                             "paymentMethod": "Cash",
                             "purchasePrice": "4898",
                             "purchaseMethod": "Walk-in"
@@ -50,23 +50,43 @@ app.get('/api-endpoint', function(request, response) {
     if (startDate){
         var inputDate = new Date(startDate)
         console.log("formated Start Date: " + inputDate);
-        outputResult = outputResult.filter(x => {
+        outputResult = jsonContent.filter(x => {
             if (x.purchaseDate){
                 var purchaseFormatDate = new Date(x.purchaseDate);
                 return purchaseFormatDate >= inputDate;
             }
         })
+        if (endDate){
+            var inputDate = new Date(endDate)
+            console.log("formated End Date: " + inputDate);
+            outputResult = outputResult.filter(x => {
+                if (x.purchaseDate){
+                    var purchaseFormatDate = new Date(x.purchaseDate);
+                    return purchaseFormatDate <= inputDate;
+                }
+            })
+        }
     }
     
     if (endDate){
         var inputDate = new Date(endDate)
         console.log("formated End Date: " + inputDate);
-        outputResult = outputResult.filter(x => {
+        outputResult = jsonContent.filter(x => {
             if (x.purchaseDate){
                 var purchaseFormatDate = new Date(x.purchaseDate);
                 return purchaseFormatDate <= inputDate;
             }
         })
+        if (startDate){
+            var inputDate = new Date(startDate)
+            console.log("formated Start Date: " + inputDate);
+            outputResult = outputResult.filter(x => {
+                if (x.purchaseDate){
+                    var purchaseFormatDate = new Date(x.purchaseDate);
+                    return purchaseFormatDate >= inputDate;
+                }
+            })
+        }
     }
     
     response.setHeader('Access-Control-Allow-Origin','*');
