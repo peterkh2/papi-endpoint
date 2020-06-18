@@ -43,18 +43,14 @@ app.get('/api-endpoint', function(request, response) {
                 ]
       ;
     
-    var outputResult;
+    var outputResult = jsonContent;
     const startDate = request.query.startDate;
-    
-    console.log("Original start date: " + startDate);
-    
-    
-//     const endDate = request.params.endDate;
+    const endDate = request.params.endDate;
     
     if (startDate){
         var inputDate = new Date(startDate)
         console.log("formated Start Date: " + inputDate);
-        outputResult = jsonContent.filter(x => {
+        outputResult = outputResult.filter(x => {
             if (x.purchaseDate){
                 var purchaseFormatDate = new Date(x.purchaseDate);
                 return purchaseFormatDate >= inputDate;
@@ -62,14 +58,16 @@ app.get('/api-endpoint', function(request, response) {
         })
     }
     
-//     if (endDate){
-//         var date = new Date(endDate)
-//         outputResult = jsonContent.filter(x => {
-//             if (x.purchaseDate){
-//                 return date <= x.purchaseDate
-//             }
-//         })
-//     }
+    if (endDate){
+        var inputDate = new Date(endDate)
+        console.log("formated End Date: " + inputDate);
+        outputResult = outputResult.filter(x => {
+            if (x.purchaseDate){
+                var purchaseFormatDate = new Date(x.purchaseDate);
+                return purchaseFormatDate <= inputDate;
+            }
+        })
+    }
     
     response.setHeader('Access-Control-Allow-Origin','*');
 //     response.send(JSON.parse(JSON.stringify(jsonContent)));
