@@ -52,6 +52,8 @@ app.get('/api/purchaseHistory', function (request, response) {
   fs.readFile('./data/purchaseHistory.json', 'utf8', (err, data) => {
     if (err) { throw err; }
 
+    // Testing
+    data = data.slice(1);  
     response.setHeader('Content-Type', 'application/json');
     response.setHeader('Access-Control-Allow-Origin','*');
     response.send(JSON.parse(data));
