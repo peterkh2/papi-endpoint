@@ -40,7 +40,7 @@ app.get('/api-endpoint', function(request, response) {
 //                         }        
 //                 ]
       ;
-
+    response.setHeader('Access-Control-Allow-Origin','*');
     response.send(JSON.parse(JSON.stringify(jsonContent)));
     
 });
