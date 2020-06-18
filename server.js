@@ -52,11 +52,12 @@ app.get('/api-endpoint', function(request, response) {
 //     const endDate = request.params.endDate;
     
     if (startDate){
-        var date = new Date(startDate)
-        console.log("formated Start Date: " + date);
+        var inputDate = new Date(startDate)
+        console.log("formated Start Date: " + inputDate);
         outputResult = jsonContent.filter(x => {
             if (x.purchaseDate){
-                return date >= x.purchaseDate
+                var purchaseFormatDate = new Date(x.purchaseDate);
+                return purchaseFormatDate >= inputDate;
             }
         })
     }
