@@ -22,7 +22,7 @@ app.get('/api-endpoint', function(request, response) {
                             "status": "Completed",
                             "statusStyle": "slds-text-color_success",
                             "productName": "Black Shark 2 Pro (12GB+256GB)",
-                            "purchaseDate": "05-May-2019",
+                            "purchaseDate": "2019-05-05",
                             "paymentMethod": "Cash",
                             "purchasePrice": "4898",
                             "purchaseMethod": "Walk-in"
@@ -35,15 +35,38 @@ app.get('/api-endpoint', function(request, response) {
                             "status": "In progress",
                             "statusStyle": "slds-text-color_destructive",
                             "productName": "iPhone SE (128GB)",
-                            "purchaseDate": "05-Jun-2020",
+                            "purchaseDate": "2019-06-05",
                             "paymentMethod": "Credit card",
                             "purchasePrice": "3899",
                             "purchaseMethod": "Website"
                         }        
                 ]
       ;
+    
+    var outputResult;
+    const startDate = request.params.startDate;
+    const endDate = request.params.endDate;
+    
+    if (startDate){
+        var date = new Date(startDate)
+        outputResult = jsonContent.filter(x => {
+            if (x.purchaseDate){
+                return date >= x.purchaseDate
+            }
+        })
+    }
+    
+    if (endDate){
+        var date = new Date(endDate)
+        outputResult = jsonContent.filter(x => {
+            if (x.purchaseDate){
+                return date <= x.purchaseDate
+            }
+        })
+    }
+    
     response.setHeader('Access-Control-Allow-Origin','*');
-    response.send(JSON.parse(JSON.stringify(jsonContent)));
+    response.send(JSON.parse(JSON.stringify(outputResult)));
     
 });
 
