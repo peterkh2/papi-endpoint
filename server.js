@@ -45,29 +45,34 @@ app.get('/api-endpoint', function(request, response) {
     
     var outputResult;
     const startDate = request.params.startDate;
-    const endDate = request.params.endDate;
+    
+    console.log(startDate);
+    
+    
+//     const endDate = request.params.endDate;
     
     if (startDate){
         var date = new Date(startDate)
-        outputResult = jsonContent.filter(x => {
-            if (x.purchaseDate){
-                return date >= x.purchaseDate
-            }
-        })
+        console.log(date);
+//         outputResult = jsonContent.filter(x => {
+//             if (x.purchaseDate){
+//                 return date >= x.purchaseDate
+//             }
+//         })
     }
     
-    if (endDate){
-        var date = new Date(endDate)
-        outputResult = jsonContent.filter(x => {
-            if (x.purchaseDate){
-                return date <= x.purchaseDate
-            }
-        })
-    }
+//     if (endDate){
+//         var date = new Date(endDate)
+//         outputResult = jsonContent.filter(x => {
+//             if (x.purchaseDate){
+//                 return date <= x.purchaseDate
+//             }
+//         })
+//     }
     
     response.setHeader('Access-Control-Allow-Origin','*');
-//     response.send(JSON.parse(JSON.stringify(jsonContent)));
-    response.send(JSON.parse(JSON.stringify(outputResult)));
+    response.send(JSON.parse(JSON.stringify(jsonContent)));
+//     response.send(JSON.parse(JSON.stringify(outputResult)));
     
 });
 
