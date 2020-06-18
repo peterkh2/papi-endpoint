@@ -46,14 +46,14 @@ app.get('/api-endpoint', function(request, response) {
     var outputResult;
     const startDate = request.params.startDate;
     
-    console.log(startDate);
+    console.log("Original start date: " + startDate);
     
     
 //     const endDate = request.params.endDate;
     
     if (startDate){
         var date = new Date(startDate)
-        console.log(date);
+        console.log("formated Start Date: " + date);
 //         outputResult = jsonContent.filter(x => {
 //             if (x.purchaseDate){
 //                 return date >= x.purchaseDate
