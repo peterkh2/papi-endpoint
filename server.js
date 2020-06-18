@@ -44,7 +44,7 @@ app.get('/api-endpoint', function(request, response) {
       ;
     
     var outputResult;
-    const startDate = request.params.startDate;
+    const startDate = request.query.startDate;
     
     console.log("Original start date: " + startDate);
     
