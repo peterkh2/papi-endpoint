@@ -53,7 +53,7 @@ app.get('/api/purchaseHistory', function (request, response) {
     if (err) { throw err; }
 
     // Testing
-    data = data.slice(1);  
+//     data = data.slice(1);  
     response.setHeader('Content-Type', 'application/json');
     response.setHeader('Access-Control-Allow-Origin','*');
     response.send(JSON.parse(data));
