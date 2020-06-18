@@ -58,7 +58,7 @@ app.get('/api/purchaseHistory', function (request, response) {
   })
 });
 
-//Purchase History
+//Promotion Recommendation
 app.get('/api/promotionRecommendation', function (request, response) {
   fs.readFile('./data/promotionRecommendation.json', 'utf8', (err, data) => {
     if (err) { throw err; }
