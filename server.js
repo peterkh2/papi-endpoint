@@ -54,11 +54,11 @@ app.get('/api-endpoint', function(request, response) {
     if (startDate){
         var date = new Date(startDate)
         console.log("formated Start Date: " + date);
-//         outputResult = jsonContent.filter(x => {
-//             if (x.purchaseDate){
-//                 return date >= x.purchaseDate
-//             }
-//         })
+        outputResult = jsonContent.filter(x => {
+            if (x.purchaseDate){
+                return date >= x.purchaseDate
+            }
+        })
     }
     
 //     if (endDate){
