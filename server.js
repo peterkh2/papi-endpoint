@@ -43,9 +43,9 @@ app.get('/api-endpoint', function(request, response) {
                 ]
       ;
     
-    var outputResult;
-    const startDate = request.params.startDate;
-    const endDate = request.params.endDate;
+//     var outputResult;
+//     const startDate = request.params.startDate;
+//     const endDate = request.params.endDate;
     
 //     if (startDate){
 //         var date = new Date(startDate)
